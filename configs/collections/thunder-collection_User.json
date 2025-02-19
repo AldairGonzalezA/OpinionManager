@@ -1,0 +1,108 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "User",
+    "collectionId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+    "dateExported": "2025-02-19T04:16:25.741Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6a029319-07a4-4c6e-92f6-8fd98696b240",
+            "colId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+            "containerId": "",
+            "name": "GetUsers",
+            "url": "http://localhost:3000/opinionManager/v1/users/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-02-18T04:46:12.577Z",
+            "modified": "2025-02-19T00:40:16.657Z",
+            "headers": []
+        },
+        {
+            "_id": "a4ef963b-4c8f-46a5-8b39-50f47885ad66",
+            "colId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+            "containerId": "",
+            "name": "SearchUser",
+            "url": "http://localhost:3000/opinionManager/v1/users/findUser/67b529caf071d0d06c671f2c",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-18T04:46:41.226Z",
+            "modified": "2025-02-19T00:46:55.910Z",
+            "headers": []
+        },
+        {
+            "_id": "5da6e1ee-af8a-4208-aff4-8d33328e60b0",
+            "colId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+            "containerId": "",
+            "name": "UpdateUser",
+            "url": "http://localhost:3000/opinionManager/v1/users/67b529caf071d0d06c671f2c",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2025-02-18T04:47:31.907Z",
+            "modified": "2025-02-19T00:47:28.148Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"Ale_z_z\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e6eb77bd-3890-42b6-96e3-025fbd1c2900",
+            "colId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+            "containerId": "",
+            "name": "UpdatePassword",
+            "url": "http://localhost:3000/opinionManager/v1/users/updatePassword/67b529caf071d0d06c671f2c",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2025-02-18T04:48:15.903Z",
+            "modified": "2025-02-19T00:54:40.779Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I0MTAxNzMxOGZhMzcxYzIzMmE3ODUiLCJpYXQiOjE3Mzk4NTM4OTksImV4cCI6MTczOTg1NzQ5OX0.IfUTeKUyf-93Cnn__X6ApLdIVhY9q1kMAySXBRMitHM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\":\"11111111\",\n  \"oldPassword\":\"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "93c20720-7510-41cd-b0d5-c3e715368860",
+            "colId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:3000/opinionManager/v1/auth/register",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2025-02-19T00:40:27.562Z",
+            "modified": "2025-02-19T00:44:27.564Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Alejandro\",\n  \"surname\":\"Gonzalez\",\n  \"username\":\"Ale_Gonza\",\n  \"email\":\"ale@gmail.com\",\n  \"password\":\"12345678\",\n  \"phone\":\"16593023\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e491244e-d52e-4f04-b753-3363e178ecf4",
+            "colId": "c3eb4cd9-8557-42f8-a4bc-917545ed778f",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:3000/opinionManager/v1/auth/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2025-02-19T00:56:21.037Z",
+            "modified": "2025-02-19T00:57:11.997Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"ale@gmail.com\",\n  \"password\":\"11111111\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "v3MJbI9btVxJ7lixubK6mr1CmaN-NVzhXSmcKTrbR5sBWPR0BzFl2K8Sj6cFoZuWW6QIySK2KTxQQvouibLoSA"
+}
