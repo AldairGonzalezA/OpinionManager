@@ -29,3 +29,14 @@ export const saveComment = async (req, res) =>{
         })
     }
 }
+
+export const uopdateComment = async (req, res = response) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error to update the comment'
+        })
+    }
+}
