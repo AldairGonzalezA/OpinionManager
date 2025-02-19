@@ -33,7 +33,7 @@ export const savePublication = async (req, res) =>{
     }
 }
 
-export const getPublication = async (req = request, res = response) => {
+export const getPublications = async (req = request, res = response) => {
     try {
         const { limite = 10, desde = 0} = req.query;
         const query = {status: true};

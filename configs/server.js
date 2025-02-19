@@ -6,6 +6,7 @@ import { dbConnection } from './mongo.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
+import publicationRoutes from '../src/publications/publication.routes.js';
 
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false}));
@@ -19,6 +20,7 @@ const middlewares = (app) =>{
 const routes = (app) =>{
     app.use("/opinionManager/v1/auth", authRoutes);
     app.use("/opinionManager/v1/users", userRoutes);
+    app.use("/opinionManager/v1/publications", publicationRoutes);
 }
 
 const connectarDB = async () =>{
