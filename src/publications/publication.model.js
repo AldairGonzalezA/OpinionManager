@@ -7,8 +7,9 @@ const PublicationSchema = Schema({
         maxLength: [25, 'Cant be overcome 25 characters']
     },
     category:{
-        type: String,
-        required: [true, 'Category is required'],
+        type: Schema.Types.ObjectId,
+        ref: 'Category',
+        required: [true, 'The pulication need a category']
     },
     mainText:{
         type: String,

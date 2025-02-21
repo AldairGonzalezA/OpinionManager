@@ -1,15 +1,17 @@
 import { response, request } from 'express';
 import Publication from './publication.model.js';
 import User from '../users/user.model.js';
+import Category from '../category/category.model.js';
 
 export const savePublication = async (req, res) =>{
     try {
         const data = req.body;
         const user = req.usuario;
+        const category = await Category.findOne({name: data.category})
 
         const publication = await Publication.create({
             title: data.name,
-            category: data.category,
+            category: category._id,
             mainText: data.mainText,
             publisher: user.id
         })
@@ -91,7 +93,7 @@ export const updatePublication = async (req, res = response) =>{
         const autheticatedUser = req.usuario;
         const {_id, publisher, ...data} = req.body
         
-        if(autheticatedUser._id.toString() === user.id){
+        if(autheticatedUser._id.toString() === user.publisher.toString()){
             const publication = await Publication.findByIdAndUpdate(id, data, {new: true});
             return res.status(200).json({
                 success: true,

@@ -13,6 +13,11 @@ const CommentSchema = Schema({
         type: Boolean,
         default: true
     }
-})
+},
+    {
+        timestamps: true,
+        versionKey: false
+    }
+);
 
 export default model('Comment', CommentSchema);
