@@ -16,8 +16,15 @@ export const existeUserById = async (id ='') =>{
 }
 
 export const existePublicacion = async (id = '') => {
-    cosnt existePubli = await Publication.findById(id);
+    const existePubli = await Publication.findById(id);
     if(!existePubli){
         throw new Error(`La publicacion con ID ${id} no existe en la base de datos`)
+    }
+}
+
+export const existeCategory = async (id = '') => {
+    const existeCategory = await Category.findById(id);
+    if(!existeCategory){
+        throw new Error(`La categoria con ID ${id} no existe en la base de datos`);
     }
 }

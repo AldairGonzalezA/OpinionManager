@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from 'express-validator';
-import { getPublications, savePublication, searchPublication, updatePublication, deletePublication } from "./publication.controller";
+import { getPublications, savePublication, searchPublication, updatePublication, deletePublication } from "./publication.controller.js";
 import { validarJWT } from '../middlewares/validar-jwt.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { existePublicacion } from "../helpers/db-validator.js";

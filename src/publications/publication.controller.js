@@ -1,15 +1,17 @@
 import { response, request } from 'express';
 import Publication from './publication.model.js';
 import User from '../users/user.model.js';
+import Category from '../category/category.model.js';
 
 export const savePublication = async (req, res) =>{
     try {
         const data = req.body;
         const user = req.usuario;
+        const category = await Category.findById({name: data.category});
 
         const publication = await Publication.create({
             title: data.name,
-            category: data.category,
+            category: category.id,
             mainText: data.mainText,
             publisher: user.id
         })
