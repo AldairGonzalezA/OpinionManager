@@ -104,3 +104,40 @@ export const updatePassword = async (req, res = response) =>{
         })
     }
 }
+
+export const createUserAdmin = async (res) => {
+    try {
+        const userAdmin = await User.findOne({role: 'ADMIN_ROLE'});
+
+        if(!userAdmin){
+            const password = "admin";
+         const encryptedPassword = await hash(password);
+         
+         const user = await User.create({
+            name: 'Admin',
+            surname: 'Admin',
+            username: 'admin',
+            email: 'admin@gmail.com',
+            phone: '12345678',
+            password: encryptedPassword,
+            role: 'ADMIN_ROLE'
+         })
+
+         res.status(200).json({
+            success: true,
+            msg: 'Datos del usuario',
+            user
+         })
+         console.log(user);
+        }
+
+        console.log(userAdmin);
+         
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error to create the user admin',
+            error: error .message
+        })
+    }
+}

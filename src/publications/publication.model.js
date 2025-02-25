@@ -9,7 +9,11 @@ const PublicationSchema = Schema({
     category:{
         type: Schema.Types.ObjectId,
         ref: 'Category',
+<<<<<<< HEAD
         required: [true, 'The pulication need a category']
+=======
+        required: [true, 'The publication need a category']
+>>>>>>> 56569302321f4d07e5350049f70ec8d360965fa8
     },
     mainText:{
         type: String,

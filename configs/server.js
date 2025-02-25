@@ -7,6 +7,7 @@ import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import publicationRoutes from '../src/publications/publication.routes.js';
+import { createUserAdmin } from '../src/users/user.controller.js';
 
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false}));
@@ -40,6 +41,7 @@ export const initServer= async () =>{
         middlewares(app);
         connectarDB();
         routes(app);
+        createUserAdmin();
         app.listen(port);
         console.log(`Server running on port ${port}`);
     } catch (error) {

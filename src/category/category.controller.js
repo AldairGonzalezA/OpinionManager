@@ -1,5 +1,6 @@
 import { response, request} from 'express';
 import Category from './category.model.js';
+import Publication from '../publications/publication.model.js';
 
 export const saveCategory = async (req, res) => {
     try {
@@ -101,6 +102,9 @@ export const deleteCategory = async (req, res = response) => {
     try {
         const { id } = req.params;
         const category = await Category.findByIdAndUpdate(id, {status: false}, {new: true});
+
+        const publications = await Publication.countDocuments
+
         
         res.status(200).json({
             success: true,

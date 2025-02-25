@@ -7,11 +7,11 @@ export const savePublication = async (req, res) =>{
     try {
         const data = req.body;
         const user = req.usuario;
-        const category = await Category.findOne({name: data.category})
+        const category = await Category.findById({name: data.category});
 
         const publication = await Publication.create({
             title: data.name,
-            category: category._id,
+            category: category.id,
             mainText: data.mainText,
             publisher: user.id
         })

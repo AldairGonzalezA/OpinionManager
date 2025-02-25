@@ -48,7 +48,8 @@ export const updateComment = async (req, res = response) => {
 
         return res.status(403).json({
             success: false,
-            msg:'Only the user can edit their comment'
+
+            msg:'Only the user can edit their comment',
         })
     } catch (error) {
         res.status(500).json({
@@ -78,9 +79,9 @@ export const deleteComment = async (req, res = response) => {
             })
         }
 
-        return res.status(500).json({
+        return res.status(403).json({
             success: false,
-            msg:'Only the user can delete their comment'
+            msg: 'Only the user can delete their comment'
         })
     } catch (error) {
         res.status(500).json({
