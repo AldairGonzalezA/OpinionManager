@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 
 const CommentSchema = Schema({
     publisher: {
-        type: Schema.Types.ObjetcsId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     },
     text:{

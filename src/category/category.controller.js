@@ -27,6 +27,24 @@ export const saveCategory = async (req, res) => {
     }
 }
 
+export const categoryDefault = async (res) => {
+    try {
+        const category = await Category.findOne({name: 'Uncategorized'}) 
+        if(!category){
+            await Category.create({
+                name: 'Uncategorized',
+                description: 'Default category, assign a new category'
+            })
+        }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error to create the category',
+            error: error.message
+        })
+    }
+}
+
 export const getCategory = async (req = request, res = response) => {
     try {
         const {limite = 10, desde = 0} = req.query;
@@ -103,7 +121,22 @@ export const deleteCategory = async (req, res = response) => {
         const { id } = req.params;
         const category = await Category.findByIdAndUpdate(id, {status: false}, {new: true});
 
-        const publications = await Publication.countDocuments
+        if(!category){
+            return res.status(404).json({
+                success: false,
+                msg: 'Category not found'
+            });
+        }
+        const defaultCategory = await Category.findOne({name: 'Uncategorized'});
+
+        await Publication.updateMany({ category: category._id}, {category: defaultCategory._id });
+
+        res.status(200).json({
+            success: true,
+            msg: 'Category deleted sucessfully',
+            category
+        })
+
 
         
         res.status(200).json({

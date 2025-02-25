@@ -134,10 +134,6 @@ export const createUserAdmin = async (res) => {
         console.log(userAdmin);
          
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            msg: 'Error to create the user admin',
-            error: error .message
-        })
+       console.log(error.message)
     }
 }
