@@ -3,10 +3,10 @@ import Usuario from '../users/user.model.js';
 import {generarJWT} from '../helpers/generate-jwt.js';
 
 export const login = async (req,res) =>{
+    
     const  {email, password, username} = req.body;
 
     try {
-
         const lowerEmail = email ? email.toLowerCase() : null;
         const lowerUsername = username ? username.toLowerCase() : null;
 
@@ -28,7 +28,6 @@ export const login = async (req,res) =>{
                 msg: 'El usuario no existe en la base de datos'
             })
         }
-
         const validPassword = await verify(user.password, password);
         if (!validPassword) {
             return res.status(400).json({

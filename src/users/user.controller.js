@@ -105,13 +105,13 @@ export const updatePassword = async (req, res = response) =>{
     }
 }
 
-export const createUserAdmin = async (res) => {
+export const createUserAdmin = async () => {
     try {
         const userAdmin = await User.findOne({role: 'ADMIN_ROLE'});
 
         if(!userAdmin){
             const password = "admin";
-         const encryptedPassword = await hash(password);
+         const encryptedPassword = await hash(password,10);
          
          const user = await User.create({
             name: 'Admin',
@@ -123,15 +123,11 @@ export const createUserAdmin = async (res) => {
             role: 'ADMIN_ROLE'
          })
 
-         res.status(200).json({
-            success: true,
-            msg: 'Datos del usuario',
-            user
-         })
          console.log(user);
+        }else{
+            console.log('Usuario admin')
+            console.log(userAdmin);
         }
-
-        console.log(userAdmin);
          
     } catch (error) {
        console.log(error.message)
