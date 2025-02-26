@@ -7,11 +7,11 @@ export const savePublication = async (req, res) =>{
     try {
         const data = req.body;
         const user = req.usuario;
-        const category = await Category.findById({name: data.category});
+        const category = await Category.findOne({name: data.category});
 
         const publication = await Publication.create({
-            title: data.name,
-            category: category.id,
+            title: data.title,
+            category: category._id,
             mainText: data.mainText,
             publisher: user.id
         })
@@ -45,6 +45,17 @@ export const getPublications = async (req = request, res = response) => {
             Publication.find(query)
                 .skip(Number(desde))
                 .limit(Number(limite))
+                .populate('category', 'name')
+                .populate('publisher', 'username')
+                .populate({
+                    path: 'comments',
+                    select: 'publisher text',
+                    match: {status: true},
+                    populate:{
+                        path:'publisher',
+                        select: 'username'
+                    }
+                })
         ]);
 
         res.status(200).json({
@@ -64,7 +75,18 @@ export const getPublications = async (req = request, res = response) => {
 export const searchPublication = async (req, res) =>{
     try {
         const { id } = req.params;
-        const publication = await Publication.findById(id);
+        const publication = await Publication.findById(id)
+            .populate('publisher', 'username') 
+            .populate('category', 'name')
+            .populate({
+            path: 'comments',   
+            select: 'publisher text',  
+            match: { status: true },
+            populate:{
+                path:'publisher',
+                select: 'username'
+            }
+        });  
 
         if(!publication){
             return res.status(404).json({
@@ -91,10 +113,24 @@ export const updatePublication = async (req, res = response) =>{
         const { id } = req.params;
         const user = await Publication.findById(id).select('publisher'); 
         const autheticatedUser = req.usuario;
-        const {_id, publisher, ...data} = req.body
+        const {_id, publisher, category, ...data} = req.body
+        const newCategory = await Category.findOne({name: category})
         
         if(autheticatedUser._id.toString() === user.publisher.toString()){
-            const publication = await Publication.findByIdAndUpdate(id, data, {new: true});
+            if (category) {
+                const categoryFound = await Category.findOne({ name: category });
+                if (!categoryFound) {
+                    return res.status(400).json({
+                        success: false,
+                        msg: 'Category not found'
+                    });
+                }
+                data.category = categoryFound._id; 
+            }
+    
+            
+            const publication = await Publication.findByIdAndUpdate(id, data, { new: true });
+
             return res.status(200).json({
                 success: true,
                 msg: 'Publication update successfully!',

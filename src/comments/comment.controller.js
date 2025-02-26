@@ -5,12 +5,19 @@ import Publication from '../publications/publication.model.js';
 export const saveComment = async (req, res) =>{
     try {
         const data = req.body;
-        const publication = await Publication.findOne({Title: data.title})
+        const publication = await Publication.findOne({title: data.title})
+        const user = req.usuario;
         const comment = await Comment.create({
-            publisher: publication._id,
+            publisher: user._id,
             text: data.text,
         })
 
+        if(!publication){
+            return res.status(404).json({
+                success: false,
+                msg:'No existe una publicacion con ese nombre'
+            })
+        }
         await Publication.findByIdAndUpdate(publication._id, {
             $push: { comments: comment._id}
         })
@@ -35,7 +42,7 @@ export const updateComment = async (req, res = response) => {
         const { id } = req.params;
         const user = await Comment.findById(id).select('publisher');
         const autheticatedUser = req.usuario;
-        const { _id, ...data} = req.body;
+        const { _id, title, ...data} = req.body;
 
         if(autheticatedUser._id.toString() === user.publisher.toString()){
             const comment = await Comment.findByIdAndUpdate(id, data, {new: true});

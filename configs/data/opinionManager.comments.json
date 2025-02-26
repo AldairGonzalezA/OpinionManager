@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "67be8478012ab20d503cfb93"
+  },
+  "publisher": {
+    "$oid": "67b529caf071d0d06c671f2c"
+  },
+  "text": "Siii hermano increible",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T03:03:20.484Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:03:20.484Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be8500fe87d1ffd0b0aa54"
+  },
+  "publisher": {
+    "$oid": "67b529caf071d0d06c671f2c"
+  },
+  "text": "Siii hermano increible",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T03:05:36.356Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:05:36.356Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be851cfe87d1ffd0b0aa58"
+  },
+  "publisher": {
+    "$oid": "67b529caf071d0d06c671f2c"
+  },
+  "text": "Siii hermano increible",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T03:06:04.448Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:06:04.448Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be856c20c063d72c2e1546"
+  },
+  "publisher": {
+    "$oid": "67b529caf071d0d06c671f2c"
+  },
+  "text": "Sii que emocinante!",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T03:07:24.242Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:13:27.433Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be8723803ee566ed65b5e4"
+  },
+  "publisher": {
+    "$oid": "67b529caf071d0d06c671f2c"
+  },
+  "text": "A nadie le importa",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-26T03:14:43.545Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:15:27.545Z"
+  }
+}]

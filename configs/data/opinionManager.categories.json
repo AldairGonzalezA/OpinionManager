@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "67be6efe96fbc3cc6d709563"
+  },
+  "name": "Soccer",
+  "description": "Relacionado al deporte futbol",
+  "status": false
+},
+{
+  "_id": {
+    "$oid": "67be7349655fd43a331f3574"
+  },
+  "name": "Musica",
+  "description": "Relacionado con la musica",
+  "status": true,
+  "__v": 0
+}]

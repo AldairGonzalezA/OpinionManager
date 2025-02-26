@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "e25f7cb8-ec79-43a0-9784-feb5732df230",
+		"name": "Publications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42082102"
+	},
+	"item": [
+		{
+			"name": "GetPublications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/publications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"publications",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchPublication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/publications/findPublication/67be763c1b8da6aff35e715a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"publications",
+						"findPublication",
+						"67be763c1b8da6aff35e715a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SavePublication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkNTBiMDViM2JiYTkwMDQ5ZDY5MmUiLCJpYXQiOjE3NDA1MzQ5NTksImV4cCI6MTc0MDUzODU1OX0.YOjQmPdB2CyRSPnH4zfW4kmToGRYfZTQy1r8dOeEd_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Final de Champions!!!\",\r\n    \"category\":\"Soccer\",\r\n    \"mainText\":\"Increible final que nos espera este domingo!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/publications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"publications",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePublication",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkNTBiMDViM2JiYTkwMDQ5ZDY5MmUiLCJpYXQiOjE3NDA1MzYyMjQsImV4cCI6MTc0MDUzOTgyNH0._45JSop05SEKzvr85jQ1hvFxumSi3BAllslDNvW7W-U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mainText\":\"Gran final que nos espera este domingo!\",\r\n    \"category\":\"Soccer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/publications/67be763c1b8da6aff35e715a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"publications",
+						"67be763c1b8da6aff35e715a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePublication",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkNTBiMDViM2JiYTkwMDQ5ZDY5MmUiLCJpYXQiOjE3NDA1Mzg1NzMsImV4cCI6MTc0MDU0MjE3M30.KC1YY_g6TMDZgH-w9jnf4aitKgDa4mbn-0vtbjsYFnQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/publications/67be824fd3a78ab6b6e4be1e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"publications",
+						"67be824fd3a78ab6b6e4be1e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

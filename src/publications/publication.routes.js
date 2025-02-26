@@ -10,7 +10,7 @@ const router = Router();
 router.get("/", getPublications)
 
 router.get(
-    "/findPuliblication/:id",
+    "/findPublication/:id",
     [
         check("id", "ID is invalid").isMongoId(),
         check("id").custom(existePublicacion),

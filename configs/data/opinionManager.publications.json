@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "67be763c1b8da6aff35e715a"
+  },
+  "title": "Final de Champions!!!",
+  "category": {
+    "$oid": "67be6efe96fbc3cc6d709563"
+  },
+  "mainText": "Gran final que nos espera este domingo!",
+  "status": true,
+  "publisher": {
+    "$oid": "67bd50b05b3bba90049d692e"
+  },
+  "comments": [
+    {
+      "$oid": "67be856c20c063d72c2e1546"
+    },
+    {
+      "$oid": "67be8723803ee566ed65b5e4"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67be824fd3a78ab6b6e4be1e"
+  },
+  "title": "Nueva cancion de Feid!!!",
+  "category": {
+    "$oid": "67be7349655fd43a331f3574"
+  },
+  "mainText": "Estoy muy emocionado!",
+  "status": false,
+  "publisher": {
+    "$oid": "67bd50b05b3bba90049d692e"
+  },
+  "comments": []
+}]

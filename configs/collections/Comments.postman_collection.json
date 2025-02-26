@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "1746b8b6-44f6-4806-8045-2cdeeaa66e87",
+		"name": "Comments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42082102"
+	},
+	"item": [
+		{
+			"name": "SaveComment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MjljYWYwNzFkMGQwNmM2NzFmMmMiLCJpYXQiOjE3NDA1Mzg5ODIsImV4cCI6MTc0MDU0MjU4Mn0.zKqW8qIR_qX3jNNCUdNnGIKTsDzWWQnbZSin1Vpmp3M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Final de Champions!!!\",\r\n    \"text\":\"Siii hermano increible\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/comments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateComent",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MjljYWYwNzFkMGQwNmM2NzFmMmMiLCJpYXQiOjE3NDA1Mzk1MjcsImV4cCI6MTc0MDU0MzEyN30.clhBqKpInpM0Qzs8JbZKmbp7lcn11afUsPOTY7_NXC4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":\"Sii que emocinante!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/comments/67be856c20c063d72c2e1546",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"comments",
+						"67be856c20c063d72c2e1546"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteComment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MjljYWYwNzFkMGQwNmM2NzFmMmMiLCJpYXQiOjE3NDA1Mzk1MjcsImV4cCI6MTc0MDU0MzEyN30.clhBqKpInpM0Qzs8JbZKmbp7lcn11afUsPOTY7_NXC4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/opinionManager/v1/comments/67be8723803ee566ed65b5e4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"opinionManager",
+						"v1",
+						"comments",
+						"67be8723803ee566ed65b5e4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "67b529caf071d0d06c671f2c"
+  },
+  "name": "Alejandro",
+  "surname": "Gonzalez",
+  "username": "Ale_z_z",
+  "email": "ale@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$FnMiM5Todda4o2dkN7ABlg$3eRwZjzuTMN/BC40o1JQsNzwUnomDpx87yLv0VgOIUo",
+  "phone": "16593023",
+  "role": "USER_ROLE",
+  "status": true,
+  "publications": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67bd50b05b3bba90049d692e"
+  },
+  "name": "Gabriel",
+  "surname": "Martinez",
+  "username": "Gabriel_GG",
+  "email": "gabriel@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$d678GOx3eaU9XejdjcPHpA$6yft6XuIWsdISQW+pJb4TBpTW5ggIeQcuNCLAuuQpSQ",
+  "phone": "18391893",
+  "role": "USER_ROLE",
+  "status": true,
+  "publications": [
+    {
+      "$oid": "67be763c1b8da6aff35e715a"
+    },
+    {
+      "$oid": "67be824fd3a78ab6b6e4be1e"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be87c8b061dfe0f3219663"
+  },
+  "name": "Admin",
+  "surname": "Admin",
+  "username": "Usuario administrativo",
+  "email": "admin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$C2Dy9qD7gb/dplunR6EsIg$m9Rat+Jqq3wFFqQy3TQQPzxy08MSH3g268YWIiS98X8",
+  "phone": "12345678",
+  "role": "ADMIN_ROLE",
+  "status": true,
+  "publications": [],
+  "__v": 0
+}]

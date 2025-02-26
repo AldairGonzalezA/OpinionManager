@@ -131,19 +131,13 @@ export const deleteCategory = async (req, res = response) => {
 
         await Publication.updateMany({ category: category._id}, {category: defaultCategory._id });
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             msg: 'Category deleted sucessfully',
             category
         })
 
-
         
-        res.status(200).json({
-            success: true,
-            msg: 'Category deleted successfully!',
-            category
-        })
     } catch (error) {
         res.status(500).json({
             success: false,

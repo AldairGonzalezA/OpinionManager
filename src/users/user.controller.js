@@ -12,6 +12,11 @@ export const getUsers = async (req = request, res = response) =>{
                 User.find(query)
                     .skip(Number(desde))
                     .limit(Number(limite))
+                    .populate({
+                        path: 'publications',
+                        select: 'title mainText',
+                        match: { status: true}
+                    })
             ]);
 
             res.status(200).json({
@@ -110,13 +115,13 @@ export const createUserAdmin = async () => {
         const userAdmin = await User.findOne({role: 'ADMIN_ROLE'});
 
         if(!userAdmin){
-            const password = "admin";
+            const password = "admin123";
          const encryptedPassword = await hash(password,10);
          
          const user = await User.create({
             name: 'Admin',
             surname: 'Admin',
-            username: 'admin',
+            username: 'Usuario administrativo',
             email: 'admin@gmail.com',
             phone: '12345678',
             password: encryptedPassword,
